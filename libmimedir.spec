@@ -1,18 +1,15 @@
 
-%define		snap		20030114
-
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
 Name:		libmimedir
-Version:	0.2.1
-Release:	1.%{snap}
+Version:	0.3
+Release:	0.1
 License:	GPL/LGPL
 Group:		Libraries
 #Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
-Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Source0:	http://dl.sourceforge.net/libmimedir/libmimedir-0.3.tar.gz
 # Source0-md5:	aa15d26e678baab21400b4d2af699d0c
-Patch0:		%{name}-typedef-enum.patch
-URL:		http://me.in-berlin.de/~jroger/gnome-pim/
+Patch0:		%{name}-destdir.patch
 BuildRequires:	glib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,43 +63,21 @@ Narzêdzia do VCard.
 %patch0 -p1
 
 %build
-NOCONFIGURE=1 ./autogen.sh
-%configure \
-	--with-html-dir=%{_gtkdocdir}
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
-
-%files -f %{name}.lang
+%files 
 %defattr(644,root,root,755)
 %doc README ChangeLog
-%attr(755,root,root) %{_libdir}/*.so.*
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/*
 %{_includedir}/*
-%{_pkgconfigdir}/*
-%{_gtkdocdir}/*
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/*.a
-
-%files progs
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
