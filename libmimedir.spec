@@ -1,7 +1,7 @@
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
 Name:		libmimedir
-Version:	0.2.0
+Version:	0.2.1
 Release:	1
 License:	GPL/LGPL
 Group:		Libraries
@@ -59,7 +59,8 @@ Narzêdzia do VCard.
 %setup -q
 
 %build
-%configure
+%configure \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
@@ -79,13 +80,14 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README ChangeLog
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so*
 
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*
+%{_gtkdocdir}/*
 
 %files static
 %defattr(644,root,root,755)
