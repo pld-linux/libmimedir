@@ -6,7 +6,7 @@ Name:		libmimedir
 Version:	0.3
 Release:	0.99
 License:	BSD
-Group:		Libraries
+Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/synce/libmimedir-0.3.tar.gz
 # Source0-md5:	bb967f6f8931d4efdc34d3729b7f819b
 Patch0:		%{name}-destdir.patch
