@@ -1,11 +1,15 @@
+
+%define		snap		20030112
+
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
 Name:		libmimedir
 Version:	0.2.1
-Release:	1
+Release:	1.%{snap}
 License:	GPL/LGPL
 Group:		Libraries
-Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
+#Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://me.in-berlin.de/~jroger/gnome-pim/
 BuildRequires:	glib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -59,6 +63,7 @@ Narzêdzia do VCard.
 %setup -q
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
