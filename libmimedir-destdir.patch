@@ -1,0 +1,14 @@
+diff -Nur libmimedir-0.3.orig/Makefile.in libmimedir-0.3/Makefile.in
+--- libmimedir-0.3.orig/Makefile.in	2003-07-31 08:27:13.000000000 +0200
++++ libmimedir-0.3/Makefile.in	2004-11-26 13:19:29.482269496 +0100
+@@ -44,8 +44,8 @@
+ 	./test
+ 
+ install: all
+-	${INSTALL} -m 444 libmimedir.h ${includedir}
+-	${INSTALL} -m 444 libmimedir.a ${libdir}
++	${INSTALL} -m 444 libmimedir.h ${DESTDIR}/${includedir}
++	${INSTALL} -m 444 libmimedir.a ${DESTDIR}/${libdir}
+ 
+ clean:
+ 	rm -f *.o *.a *.core
