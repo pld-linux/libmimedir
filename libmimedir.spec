@@ -1,5 +1,5 @@
 
-%define		snap		20030112
+%define		snap		20030114
 
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
