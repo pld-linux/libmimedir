@@ -21,43 +21,6 @@ like RFC 2426 (vCard MIME Directory Profile).
 Implementacja RFC 2425 (MIME Directory Profile) i powi±zanych RFC
 w rodzaju RFC 2426 (vCard MIME Directory Profile).
 
-%package devel
-Summary:	Development files of libmimedir library
-Summary(pl):	Pliki dla programistów u¿ywaj±cych biblioteki libmimedir
-Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel
-
-%description devel
-Development files of libmimedir library.
-
-%description devel -l pl
-Pliki dla programistów u¿ywaj±cych biblioteki libmimedir.
-
-%package static
-Summary:	Static libmimedir libraries
-Summary(pl):	Statyczne biblioteki libmimedir
-Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-
-%description static
-Static libmimedir libraries.
-
-%description static -l pl
-Statyczne biblioteki libmimedir.
-
-%package progs
-Summary:	VCard utilites
-Summary(pl):	Narzêdzia do VCard
-Group:		Applications/Text
-Requires:	%{name} = %{version}-%{release}
-
-%description progs
-VCard utilites.
-
-%description progs -l pl
-Narzêdzia do VCard.
-
 %prep
 %setup -q
 %patch0 -p1
