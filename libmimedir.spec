@@ -3,14 +3,15 @@ Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
 Name:		libmimedir
 Version:	0.3
-Release:	0.1
+Release:	0.99
 License:	GPL/LGPL
 Group:		Libraries
 #Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
 Source0:	http://dl.sourceforge.net/synce/libmimedir-0.3.tar.gz
 # Source0-md5:	bb967f6f8931d4efdc34d3729b7f819b
 Patch0:		%{name}-destdir.patch
-BuildRequires:	glib2-devel
+BuildRequires:	byacc
+BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
