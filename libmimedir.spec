@@ -28,7 +28,7 @@ w rodzaju RFC 2426 (vCard MIME Directory Profile).
 Summary:	Development files of libmimedir library
 Summary(pl):	Pliki dla programistów u¿ywaj±cych biblioteki libmimedir
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel
 
 %description devel
@@ -41,7 +41,7 @@ Pliki dla programistów u¿ywaj±cych biblioteki libmimedir.
 Summary:	Static libmimedir libraries
 Summary(pl):	Statyczne biblioteki libmimedir
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libmimedir libraries.
@@ -53,7 +53,7 @@ Statyczne biblioteki libmimedir.
 Summary:	VCard utilites
 Summary(pl):	Narzêdzia do VCard
 Group:		Applications/Text
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description progs
 VCard utilites.
@@ -75,7 +75,8 @@ NOCONFIGURE=1 ./autogen.sh
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
