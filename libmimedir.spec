@@ -11,6 +11,7 @@ Group:		Libraries
 #Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
 # Source0-md5:	aa15d26e678baab21400b4d2af699d0c
+Patch0:		%{name}-typedef-enum.patch
 URL:		http://me.in-berlin.de/~jroger/gnome-pim/
 BuildRequires:	glib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -62,6 +63,7 @@ Narzêdzia do VCard.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 NOCONFIGURE=1 ./autogen.sh
