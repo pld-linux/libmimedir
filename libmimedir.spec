@@ -1,44 +1,115 @@
-# NOTE: it's totally different than previous packages built from this spec
-#       (http://me.in-berlin.de/~jroger/gnome-pim/ up to 0.2.1 version)
-Summary:	RFC 2425 implementation
-Summary(pl):	Implementacja RFC 2425
+# NOTE: it's totally different than Lev Walkin's libmimedir
+#       (libmimedir-vlm.spec)
+Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
+Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
 Name:		libmimedir
-Version:	0.3
-Release:	0.99
-License:	BSD
-Group:		Development/Libraries
-Source0:	http://dl.sourceforge.net/synce/libmimedir-0.3.tar.gz
-# Source0-md5:	bb967f6f8931d4efdc34d3729b7f819b
-Patch0:		%{name}-destdir.patch
-BuildRequires:	bison
+Version:	0.2.1
+%define	snap	20030114
+Release:	1.%{snap}.1
+License:	LGPL (library), GPL (utilities)
+Group:		Libraries
+#Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+# Source0-md5:	aa15d26e678baab21400b4d2af699d0c
+Patch0:		%{name}-typedef-enum.patch
+URL:		http://me.in-berlin.de/~jroger/gnome-pim/
+BuildRequires:	glib2-devel
+BuildRequires:	gnome-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Implementation of RFC 2425 (MIME Directory Profile).
+Implementation of RFC 2425 (MIME Directory Profile) and related RFCs
+like RFC 2426 (vCard MIME Directory Profile). It was written by
+Sebastian Rittau.
 
 %description -l pl
-Implementacja RFC 2425 (MIME Directory Profile).
+Implementacja RFC 2425 (MIME Directory Profile) i powi±zanych RFC
+w rodzaju RFC 2426 (vCard MIME Directory Profile). Autorem tej
+implementacji jest Sebastian Rittau.
+
+%package devel
+Summary:	Development files of libmimedir library
+Summary(pl):	Pliki dla programistów u¿ywaj±cych biblioteki libmimedir
+License:	LGPL
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel
+
+%description devel
+Development files of libmimedir library.
+
+%description devel -l pl
+Pliki dla programistów u¿ywaj±cych biblioteki libmimedir.
+
+%package static
+Summary:	Static libmimedir libraries
+Summary(pl):	Statyczne biblioteki libmimedir
+License:	LGPL
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static libmimedir libraries.
+
+%description static -l pl
+Statyczne biblioteki libmimedir.
+
+%package progs
+Summary:	VCard utilites
+Summary(pl):	Narzêdzia do VCard
+License:	GPL
+Group:		Applications/Text
+Requires:	%{name} = %{version}-%{release}
+
+%description progs
+VCard utilites.
+
+%description progs -l pl
+Narzêdzia do VCard.
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
-%configure
+NOCONFIGURE=1 \
+./autogen.sh
+%configure \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}}
+install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
-%attr(755,root,root) %{_libdir}/*
-%{_includedir}/*
+%doc AUTHORS ChangeLog MAINTAINERS README TODO
+%attr(755,root,root) %{_libdir}/libmimedir-*.so.*.*.*
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libmimedir.so
+%{_libdir}/libmimedir.la
+%{_includedir}/mimedir-*
+%{_pkgconfigdir}/mimedir-*.pc
+%{_gtkdocdir}/mimedir
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libmimedir.a
+
+%files progs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
