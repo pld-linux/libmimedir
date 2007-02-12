@@ -1,7 +1,7 @@
 # NOTE: it's totally different than Lev Walkin's libmimedir
 #       (libmimedir-vlm.spec)
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
-Summary(pl):	Implementacja RFC 2425 (i powi±zanych, m.in. RFC 2426)
+Summary(pl.UTF-8):   Implementacja RFC 2425 (i powiÄ…zanych, m.in. RFC 2426)
 Name:		libmimedir
 Version:	0.2.1
 %define	snap	20030114
@@ -22,14 +22,14 @@ Implementation of RFC 2425 (MIME Directory Profile) and related RFCs
 like RFC 2426 (vCard MIME Directory Profile). It was written by
 Sebastian Rittau.
 
-%description -l pl
-Implementacja RFC 2425 (MIME Directory Profile) i powi±zanych RFC
+%description -l pl.UTF-8
+Implementacja RFC 2425 (MIME Directory Profile) i powiÄ…zanych RFC
 w rodzaju RFC 2426 (vCard MIME Directory Profile). Autorem tej
 implementacji jest Sebastian Rittau.
 
 %package devel
 Summary:	Development files of libmimedir library
-Summary(pl):	Pliki dla programistów u¿ywaj±cych biblioteki libmimedir
+Summary(pl.UTF-8):   Pliki dla programistÃ³w uÅ¼ywajÄ…cych biblioteki libmimedir
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -38,12 +38,12 @@ Requires:	glib2-devel
 %description devel
 Development files of libmimedir library.
 
-%description devel -l pl
-Pliki dla programistów u¿ywaj±cych biblioteki libmimedir.
+%description devel -l pl.UTF-8
+Pliki dla programistÃ³w uÅ¼ywajÄ…cych biblioteki libmimedir.
 
 %package static
 Summary:	Static libmimedir libraries
-Summary(pl):	Statyczne biblioteki libmimedir
+Summary(pl.UTF-8):   Statyczne biblioteki libmimedir
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
@@ -51,12 +51,12 @@ Requires:	%{name}-devel = %{version}-%{release}
 %description static
 Static libmimedir libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki libmimedir.
 
 %package progs
 Summary:	VCard utilites
-Summary(pl):	Narzêdzia do VCard
+Summary(pl.UTF-8):   NarzÄ™dzia do VCard
 License:	GPL
 Group:		Applications/Text
 Requires:	%{name} = %{version}-%{release}
@@ -64,8 +64,8 @@ Requires:	%{name} = %{version}-%{release}
 %description progs
 VCard utilites.
 
-%description progs -l pl
-Narzêdzia do VCard.
+%description progs -l pl.UTF-8
+NarzÄ™dzia do VCard.
 
 %prep
 %setup -q
