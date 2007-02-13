@@ -1,7 +1,7 @@
 # NOTE: it's totally different than Lev Walkin's libmimedir
 #       (libmimedir-vlm.spec)
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
-Summary(pl.UTF-8):   Implementacja RFC 2425 (i powiązanych, m.in. RFC 2426)
+Summary(pl.UTF-8):	Implementacja RFC 2425 (i powiązanych, m.in. RFC 2426)
 Name:		libmimedir
 Version:	0.2.1
 %define	snap	20030114
@@ -29,7 +29,7 @@ implementacji jest Sebastian Rittau.
 
 %package devel
 Summary:	Development files of libmimedir library
-Summary(pl.UTF-8):   Pliki dla programistów używających biblioteki libmimedir
+Summary(pl.UTF-8):	Pliki dla programistów używających biblioteki libmimedir
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -43,7 +43,7 @@ Pliki dla programistów używających biblioteki libmimedir.
 
 %package static
 Summary:	Static libmimedir libraries
-Summary(pl.UTF-8):   Statyczne biblioteki libmimedir
+Summary(pl.UTF-8):	Statyczne biblioteki libmimedir
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
@@ -56,7 +56,7 @@ Statyczne biblioteki libmimedir.
 
 %package progs
 Summary:	VCard utilites
-Summary(pl.UTF-8):   Narzędzia do VCard
+Summary(pl.UTF-8):	Narzędzia do VCard
 License:	GPL
 Group:		Applications/Text
 Requires:	%{name} = %{version}-%{release}
