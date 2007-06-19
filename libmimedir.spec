@@ -13,8 +13,12 @@ Source0:	%{name}-%{version}-%{snap}.tar.bz2
 # Source0-md5:	aa15d26e678baab21400b4d2af699d0c
 Patch0:		%{name}-typedef-enum.patch
 URL:		http://me.in-berlin.de/~jroger/gnome-pim/
-BuildRequires:	glib2-devel
-BuildRequires:	gnome-common
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake
+BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	gtk-doc >= 1.6
+BuildRequires:	intltool
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +37,7 @@ Summary(pl.UTF-8):	Pliki dla programistów używających biblioteki libmimedir
 License:	LGPL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel
+Requires:	glib2-devel >= 2.0.0
 
 %description devel
 Development files of libmimedir library.
@@ -72,8 +76,12 @@ Narzędzia do VCard.
 %patch0 -p1
 
 %build
-NOCONFIGURE=1 \
-./autogen.sh
+%{__intltoolize}
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
