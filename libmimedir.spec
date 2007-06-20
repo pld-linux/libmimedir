@@ -3,22 +3,22 @@
 Summary:	RFC 2425 (and related, i.e. RFC 2426) implementation
 Summary(pl.UTF-8):	Implementacja RFC 2425 (i powiązanych, m.in. RFC 2426)
 Name:		libmimedir
-Version:	0.2.1
-%define	snap	20030114
-Release:	1.%{snap}.1
+Version:	0.3.1
+Release:	1
 License:	LGPL (library), GPL (utilities)
 Group:		Libraries
-#Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
-Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5:	aa15d26e678baab21400b4d2af699d0c
-Patch0:		%{name}-typedef-enum.patch
-URL:		http://me.in-berlin.de/~jroger/gnome-pim/
+Source0:	http://www.rittau.org/mimedir/%{name}-%{version}.tar.gz
+# Source0-md5:	0ae54d1b2ddcd37f66bf60e4c034de51
+Patch0:		%{name}-pl.po-update.patch
+URL:		http://www.rittau.org/mimedir/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	gtk-doc >= 1.6
 BuildRequires:	intltool
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,6 +57,18 @@ Static libmimedir libraries.
 
 %description static -l pl.UTF-8
 Statyczne biblioteki libmimedir.
+
+%package apidocs
+Summary:	libmimedir API documentation
+Summary(pl.UTF-8):	Dokumentacja API libmimedir
+Group:		Documentation
+Requires:	gtk-doc
+
+%description apidocs
+libmimedir API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API libmimedir.
 
 %package progs
 Summary:	VCard utilites
@@ -103,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog MAINTAINERS README TODO
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/libmimedir-*.so.*.*.*
 
 %files devel
@@ -112,11 +124,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libmimedir.la
 %{_includedir}/mimedir-*
 %{_pkgconfigdir}/mimedir-*.pc
-%{_gtkdocdir}/mimedir
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libmimedir.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/mimedir
 
 %files progs
 %defattr(644,root,root,755)
