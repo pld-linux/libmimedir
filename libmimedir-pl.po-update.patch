@@ -1,0 +1,264 @@
+--- libmimedir-0.3.1/po/pl.po.orig	2005-09-04 15:04:17.000000000 +0200
++++ libmimedir-0.3.1/po/pl.po	2007-06-20 18:40:21.079279342 +0200
+@@ -8,12 +8,12 @@
+ # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: libmimedir\n"
++"Project-Id-Version: libmimedir 0.3.1\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2005-09-04 15:04+0200\n"
+-"PO-Revision-Date: 2003-07-13 08:23+0100\n"
++"PO-Revision-Date: 2007-07-20 18:11+0200\n"
+ "Last-Translator: GNOME PL Team <translators@gnome.pl>\n"
+-"Language-Team: Polish <pl@li.org>\n"
++"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -25,105 +25,102 @@
+ 
+ #: ../bin/ical-dump.c:57
+ msgid "secondly"
+-msgstr ""
++msgstr "co sekundę"
+ 
+ #: ../bin/ical-dump.c:59
+ msgid "minutely"
+-msgstr ""
++msgstr "co minutę"
+ 
+ #: ../bin/ical-dump.c:61
+-#, fuzzy
+ msgid "hourly"
+-msgstr "Kraj"
++msgstr "co godzinę"
+ 
+ #: ../bin/ical-dump.c:63
+ msgid "daily"
+-msgstr ""
++msgstr "co dzień"
+ 
+ #: ../bin/ical-dump.c:65
+ msgid "weekly"
+-msgstr ""
++msgstr "co tydzień"
+ 
+ #: ../bin/ical-dump.c:67
+ msgid "monthly"
+-msgstr ""
++msgstr "co miesiąc"
+ 
+ #: ../bin/ical-dump.c:69
+ msgid "yearly"
+-msgstr ""
++msgstr "co rok"
+ 
+ #: ../bin/ical-dump.c:71 ../bin/ical-dump.c:97
+-#, fuzzy
+ msgid "unknown"
+-msgstr "<nieznany>"
++msgstr "nieznany"
+ 
+ #: ../bin/ical-dump.c:81
+ msgid "second"
+-msgstr ""
++msgstr "sekunda"
+ 
+ #: ../bin/ical-dump.c:83
+ msgid "minute"
+-msgstr ""
++msgstr "minuta"
+ 
+ #: ../bin/ical-dump.c:85
+ msgid "hour"
+-msgstr ""
++msgstr "godzina"
+ 
+ #: ../bin/ical-dump.c:87
+ msgid "day"
+-msgstr ""
++msgstr "dzień"
+ 
+ #: ../bin/ical-dump.c:89
+ msgid "day of month"
+-msgstr ""
++msgstr "dzień miesiąca"
+ 
+ #: ../bin/ical-dump.c:91
+ msgid "day of year"
+-msgstr ""
++msgstr "dzień roku"
+ 
+ #: ../bin/ical-dump.c:93
+-#, fuzzy
+ msgid "week number"
+-msgstr "Numer telefonu"
++msgstr "tydzień roku"
+ 
+ #: ../bin/ical-dump.c:95
+ msgid "month"
+-msgstr ""
++msgstr "miesiąc"
+ 
+ #: ../bin/ical-dump.c:118
+-#, fuzzy, c-format
++#, c-format
+ msgid "  Recurrence:\n"
+-msgstr "  Sekwencja: %u\n"
++msgstr "  Powtarzalność:\n"
+ 
+ #: ../bin/ical-dump.c:120
+-#, fuzzy, c-format
++#, c-format
+ msgid "    Frequency: %s\n"
+-msgstr "  Sekwencja: %u\n"
++msgstr "    Częstość: %s\n"
+ 
+ #: ../bin/ical-dump.c:123
+-#, fuzzy, c-format
++#, c-format
+ msgid "    Until: %s\n"
+-msgstr "  Unikalny ID: %s\n"
++msgstr "    Do: %s\n"
+ 
+ #: ../bin/ical-dump.c:128
+-#, fuzzy, c-format
++#, c-format
+ msgid "    Count: %d\n"
+-msgstr "  Kraj:      %s\n"
++msgstr "    Liczba: %d\n"
+ 
+ #: ../bin/ical-dump.c:131
+ #, c-format
+ msgid "    Interval: %d\n"
+-msgstr ""
++msgstr "    Okres: %d\n"
+ 
+ #: ../bin/ical-dump.c:134
+-#, fuzzy, c-format
++#, c-format
+ msgid "    Unit: %s\n"
+-msgstr "  Unikalny ID: %s\n"
++msgstr "    Jednostka: %s\n"
+ 
+ #: ../bin/ical-dump.c:137
+-#, fuzzy, c-format
++#, c-format
+ msgid "    Units: %s\n"
+-msgstr "  Unikalny ID: %s\n"
++msgstr "    Jednostki: %s\n"
+ 
+ #: ../bin/ical-dump.c:152
+ #, c-format
+@@ -364,13 +361,12 @@
+ msgstr "Nazwa (typ) profilu"
+ 
+ #: ../mimedir/mimedir-profile.c:121
+-#, fuzzy
+ msgid "Character set"
+-msgstr "Lista kategorii"
++msgstr "Zestaw znaków"
+ 
+ #: ../mimedir/mimedir-profile.c:122
+ msgid "Character set used to en-/decode this profile"
+-msgstr ""
++msgstr "Zestaw znaków użyty do kodowania tego profilu"
+ 
+ #: ../mimedir/mimedir-profile.h:40
+ #, c-format
+@@ -396,55 +392,52 @@
+ msgstr "niepoprawny profil %s: spodziewano się %s"
+ 
+ #: ../mimedir/mimedir-recurrence.c:221
+-#, fuzzy
+ msgid "Frequency"
+-msgstr "Sekwencja"
++msgstr "Częstość"
+ 
+ #: ../mimedir/mimedir-recurrence.c:222
+ msgid "Frequency type of this recurrency rule"
+-msgstr ""
++msgstr "Rodzaj częstości tej reguły powtarzalności"
+ 
+ #: ../mimedir/mimedir-recurrence.c:229
+ msgid "Date of last recurrence"
+-msgstr ""
++msgstr "Data ostatniego powtórzenia"
+ 
+ #: ../mimedir/mimedir-recurrence.c:230
+ msgid "The date of the last recurrence of an event"
+-msgstr ""
++msgstr "Data ostatniego powtórzenia zdarzenia"
+ 
+ #: ../mimedir/mimedir-recurrence.c:235
+ msgid "Number of recurrences"
+-msgstr ""
++msgstr "Liczba powtórzeń"
+ 
+ #: ../mimedir/mimedir-recurrence.c:236
+ msgid "The numer of recurrences of an event"
+-msgstr ""
++msgstr "Liczba powtórzeń zdarzenia"
+ 
+ #: ../mimedir/mimedir-recurrence.c:243
+ msgid "Recurrence interval"
+-msgstr ""
++msgstr "Okres powtórzeń"
+ 
+ #: ../mimedir/mimedir-recurrence.c:244
+ msgid "The interval of recurrences of an event"
+-msgstr ""
++msgstr "Okres powtórzeń zdarzenia"
+ 
+ #: ../mimedir/mimedir-recurrence.c:251
+-#, fuzzy
+ msgid "Recurrence unit"
+-msgstr "Lista zasobów"
++msgstr "Jednostka powtarzalności"
+ 
+ #: ../mimedir/mimedir-recurrence.c:252
+ msgid "By which unit a recurrence should be repeated"
+-msgstr ""
++msgstr "Co jaką jednostkę zdarzenie powinno być powtarzane"
+ 
+ #: ../mimedir/mimedir-recurrence.c:259
+-#, fuzzy
+ msgid "Recurrence units"
+-msgstr "Lista zasobów"
++msgstr "Jednostki powtarzalności"
+ 
+ #: ../mimedir/mimedir-recurrence.c:260
+ msgid "List of units by which a recurrence should be repeated"
+-msgstr ""
++msgstr "Lista jednostek co które zdarzenie powinno być powtarzane"
+ 
+ #: ../mimedir/mimedir-valarm.c:548
+ #, c-format
+@@ -1592,11 +1585,11 @@
+ 
+ #: ../mimedir/mimedir-vcomponent.c:398
+ msgid "Recurrence object"
+-msgstr ""
++msgstr "Obiekt powtarzalności"
+ 
+ #: ../mimedir/mimedir-vcomponent.c:399
+ msgid "An object representing the RRULE tag"
+-msgstr ""
++msgstr "Obiekt reprezentujący znacznik RRULE"
+ 
+ #: ../mimedir/mimedir-vcomponent.c:405 ../mimedir/mimedir-vcomponent.c:406
+ msgid "Action"
+@@ -1649,12 +1642,3 @@
+ #: ../mimedir/mimedir-vcomponent.c:449
+ msgid "Sequence number"
+ msgstr "Numer sekwencji"
+-
+-#~ msgid "%s: error reading calendar file: %s\n"
+-#~ msgstr "%s: błąd podczas odczytu pliku kalendarza: %s\n"
+-
+-#~ msgid "Can not open temporary file %s: %s\n"
+-#~ msgstr "Nie można otworzyć pliku tymczasowego %s: %s\n"
+-
+-#~ msgid "Error writing calendar file %s: %s!"
+-#~ msgstr "Błąd przy zapisie pliku kalendarza %s: %s!"
