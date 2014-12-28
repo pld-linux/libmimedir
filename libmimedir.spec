@@ -13,7 +13,7 @@ Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.rittau.org/mimedir/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	gtk-doc >= 1.6
 BuildRequires:	intltool
